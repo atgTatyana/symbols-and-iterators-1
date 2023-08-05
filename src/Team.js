@@ -19,15 +19,15 @@ export default class Team {
 
     return {
       next() {
-        if (index > (length - 1)) {
+        if (index < length) {
           return {
-            value: undefined,
-            done: true,
+            value: teamIteraror[index++],
+            done: false,
           };
         }
         return {
-          value: teamIteraror[index++],
-          done: false,
+          value: undefined,
+          done: true,
         };
       },
     };
